@@ -1,0 +1,24 @@
+{
+  "name": "cloud-calendar-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzis/cloud-calendar-server.git"
+  },
+  "keywords": [
+    "server",
+    "nodejs",
+    "koa"
+  ],
+  "author": "zhaizhe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzis/cloud-calendar-server/issues"
+  },
+  "homepage": "https://github.com/zzis/cloud-calendar-server#readme"
+}
