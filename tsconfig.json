@@ -2,9 +2,14 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2017",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "paths": {
+      "@controllers/*": ["src/controllers/*"],
+    },
   },
   "include": [
-    "src/**/*"
-  ]
+    "src/**/*",
+  ],
 }
