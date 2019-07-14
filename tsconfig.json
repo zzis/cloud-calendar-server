@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "module": "commonjs",
     "target": "es2017",
     "outDir": "./dist",
     "baseUrl": ".",
     "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "@controllers/*": ["src/controllers/*"],
       "@services/*": ["src/services/*"],
       "@dao/*": ["src/dao/*"],
+      "@models/*": ["src/dao/models/*"],
     },
   },
   "include": [
