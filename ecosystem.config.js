@@ -13,7 +13,8 @@ module.exports = {
     ignore_watch: ['node_modules'],
     output: './log/out.log',
     erorr: './log/error.log',
-    max_restarts: 10,
+    // max_restarts: 10,
+    autorestart: false,
     max_memory_restart: '1G',
     env: {
       NODE_ENV: 'development'
