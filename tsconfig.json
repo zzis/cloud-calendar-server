@@ -7,6 +7,8 @@
     "esModuleInterop": true,
     "paths": {
       "@controllers/*": ["src/controllers/*"],
+      "@services/*": ["src/services/*"],
+      "@dao/*": ["src/dao/*"],
     },
   },
   "include": [
