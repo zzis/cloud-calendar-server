@@ -1,7 +1,7 @@
 import Koa from 'koa';
 
-import ICalendarService from '@services/ICalendarService';
-import Calendar from '@models/calendar';
+import ICalendarService from '@services/calendar.service';
+import Calendar from '@dao/models/calendar.model';
 
 class CalendarService implements ICalendarService {
   public calendarDao;

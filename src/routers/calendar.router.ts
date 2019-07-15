@@ -1,7 +1,7 @@
 import Router from 'koa-router';
 
-import CalendarService from '@controllers/calendar';
-import ICalendarService from '@services/ICalendarService';
+import CalendarService from '@controllers/calendar.controller';
+import ICalendarService from '@services/calendar.service';
 
 const router = new Router();
 const calendarService: ICalendarService = new CalendarService();
