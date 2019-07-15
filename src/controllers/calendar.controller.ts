@@ -4,13 +4,12 @@ import ICalendarService from '@services/calendar.service';
 import Calendar from '@dao/models/calendar.model';
 
 class CalendarService implements ICalendarService {
-  public calendarDao;
   constructor() {
     //
   }
 
-  public getCalendar(ctx: Koa.BaseContext) {
-    Calendar.findOne();
+  public async getCalendar(ctx: Koa.BaseContext) {
+    // const calendar = await Calendar.findByPk(0);
     ctx.body = 'Hello world';
   }
 }
