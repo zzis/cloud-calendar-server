@@ -1,9 +1,9 @@
 import { suite, test } from '@testdeck/mocha';
 import assert from 'assert';
 
-import sequelize from '../src/dao/index';
-import Calendar from '../src/dao/models/calendar.model';
-import { testDB } from '../config/database.config';
+import sequelize from '../../src/dao/index';
+import Calendar from '../../src/dao/models/calendar.model';
+import { testDB } from '../../config/database.config';
 
 @suite
 class CalendarTest {
