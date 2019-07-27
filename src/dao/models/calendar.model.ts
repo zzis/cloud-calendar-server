@@ -1,4 +1,4 @@
-import { Column, Model, Table, AutoIncrement, PrimaryKey, HasMany } from 'sequelize-typescript';
+import { Column, Model, Table, AutoIncrement, PrimaryKey, HasMany, Unique } from 'sequelize-typescript';
 
 import Schedule from './schedule.model';
 
@@ -9,6 +9,7 @@ class Calendar extends Model<Calendar> {
   @Column
   public id!: number;
 
+  @Unique
   @Column
   public name!: string;
   @Column
@@ -19,6 +20,13 @@ class Calendar extends Model<Calendar> {
   @HasMany(() => Schedule)
   public schedules: Schedule[];
 
+}
+
+export interface ICalendarType {
+  id: number;
+  name: string;
+  beColor: string;
+  borderColor: string;
 }
 
 export default Calendar;

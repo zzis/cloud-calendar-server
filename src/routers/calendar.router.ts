@@ -1,10 +1,12 @@
 import Router from 'koa-router';
+import koaBody from 'koa-body';
 
-import CalendarService from '@controllers/calendar.controller';
-import ICalendarService from '@services/calendar.service';
+import CalendarController from '@controllers/calendar.controller';
 
 const router = new Router();
-const calendarService: ICalendarService = new CalendarService();
-router.get('/:id', calendarService.getCalendar);
+const calendarController = new CalendarController();
+router.get('/test', calendarController.testFunc);
+router.get('/:id', calendarController.getCalendar);
+router.post('/upload', calendarController.uploadFile);
 
 export default router.routes();

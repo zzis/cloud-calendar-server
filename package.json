@@ -26,11 +26,18 @@
     "@controllers": "src/controllers",
     "@services": "src/services",
     "@dao": "src/dao",
-    "@models": "src/dao/models"
+    "@models": "src/dao/models",
+    "@config": "config",
+    "@utils": "src/utils"
   },
   "dependencies": {
+    "@types/file-type": "^10.9.1",
+    "file-type": "^12.1.0",
     "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
     "koa-router": "^7.4.0",
+    "line-reader": "^0.4.0",
+    "lodash-decorators": "^6.0.1",
     "module-alias": "^2.2.0",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^5.10.0",
