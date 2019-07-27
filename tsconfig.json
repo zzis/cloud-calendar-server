@@ -13,7 +13,8 @@
       "@services/*": ["src/services/*"],
       "@dao/*": ["src/dao/*"],
       "@models/*": ["src/dao/models/*"],
-      "@config/*": ["config/*"]
+      "@config/*": ["config/*"],
+      "@utils/*": ["src/utils/*"]
     },
   },
   "include": [

@@ -3,3 +3,4 @@ yarn-error.log
 log
 :memory
 data/database.sqlite
+public/upload

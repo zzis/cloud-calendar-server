@@ -1,7 +1,5 @@
-import Koa from 'koa';
+class CalendarService {
 
-interface ICalendarService {
-  getCalendar(ctx: Koa.BaseContext);
 }
 
-export default ICalendarService;
+export default CalendarService;
