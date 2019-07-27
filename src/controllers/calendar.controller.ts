@@ -1,0 +1,18 @@
+import Koa from 'koa';
+
+import ICalendarService from '@services/calendar.service';
+import Calendar from '@dao/models/calendar.model';
+
+class CalendarService implements ICalendarService {
+  public calendarDao;
+  constructor() {
+    //
+  }
+
+  public getCalendar(ctx: Koa.BaseContext) {
+    Calendar.findOne();
+    ctx.body = 'Hello world';
+  }
+}
+
+export default CalendarService;
