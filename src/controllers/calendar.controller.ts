@@ -3,8 +3,15 @@ import { parser } from '@utils/parser';
 import resBuilder from '@utils/resBuilder';
 
 import Calendar from '@dao/models/calendar.model';
+import ICalendarService from '@services/calendar.service';
+import CalendarService from '@services/impl/calendar.service.impl';
 
 class CalendarController {
+  private calendarService: ICalendarService;
+
+  public constructor() {
+    this.calendarService = new CalendarService();
+  }
 
   public async uploadFile(ctx: Koa.BaseContext) {
     if (!ctx.request.files || !ctx.request.files.file) {

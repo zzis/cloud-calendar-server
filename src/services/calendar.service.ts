@@ -1,5 +1,3 @@
-class CalendarService {
-
+export default interface ICalendarService {
+  createEvents();
 }
-
-export default CalendarService;
