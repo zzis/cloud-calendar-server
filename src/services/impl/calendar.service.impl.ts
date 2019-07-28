@@ -95,7 +95,7 @@ export default class CalendarService implements ICalendarService {
     }
     let calendar;
     try {
-      await Calendar.findOne({
+      calendar = await Calendar.findOne({
         where: {
           name,
         },
