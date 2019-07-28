@@ -1,10 +1,18 @@
 import lineReader from 'line-reader';
 
-export function parser(filePath) {
+export interface IEvent {
+  date: string;
+  start: string;
+  end: string;
+  category: string;
+  description: string;
+}
+
+export function parser(filePath: string) {
   return new Promise((resolve, reject) => {
     let currentDate;
     let lineItem;
-    const events = [];
+    const events: IEvent[] = [];
     let lineNumber = 0;
     lineReader.eachLine(filePath, (line, isLast) => {
       try {

@@ -26,7 +26,6 @@ class Schedule extends Model {
 export interface ISchedule {
   id: number;
   title: string;
-  category?: string;
   start: string;
   end: string;
   calendarId: string;

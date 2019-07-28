@@ -22,7 +22,8 @@ class CalendarController {
     if (data.error) {
       return ctx.body = resBuilder({errNo: 1, errMsg: data.error});
     }
-    return ctx.body = resBuilder({data});
+    const calendars = await new CalendarService().createEvents(data);
+    return ctx.body = resBuilder({data: calendars});
   }
 
   public testFunc(ctx: Koa.BaseContext) {
