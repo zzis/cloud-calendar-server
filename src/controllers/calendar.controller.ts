@@ -1,19 +1,12 @@
-import Koa from 'koa';
 import { parser } from '@utils/parser';
 import resBuilder from '@utils/resBuilder';
 
 import Calendar from '@dao/models/calendar.model';
-import ICalendarService from '@services/calendar.service';
-import CalendarService from '@services/impl/calendar.service.impl';
+import { KoaContext } from '@services/index';
 
 class CalendarController {
-  private calendarService: ICalendarService;
-
-  public constructor() {
-    this.calendarService = new CalendarService();
-  }
-
-  public async uploadFile(ctx: Koa.BaseContext) {
+  public async uploadFile(ctx: KoaContext) {
+    const { calendarService } = ctx;
     if (!ctx.request.files || !ctx.request.files.file) {
       return ctx.body = resBuilder({errNo: 1, errMsg: 'please select file'});
     }
@@ -22,15 +15,15 @@ class CalendarController {
     if (data.error) {
       return ctx.body = resBuilder({errNo: 1, errMsg: data.error});
     }
-    const calendars = await new CalendarService().createEvents(data);
+    const calendars = await calendarService.createEvents(data);
     return ctx.body = resBuilder({data: calendars});
   }
 
-  public testFunc(ctx: Koa.BaseContext) {
+  public testFunc(ctx: KoaContext) {
     ctx.body = resBuilder({errNo: 1, errMsg: 'this is a test interface'});
   }
 
-  public async getCalendar(ctx: Koa.BaseContext) {
+  public async getCalendar(ctx: KoaContext) {
     // const calendar = await Calendar.findByPk(0);
     const calendars = await Calendar.findAll({
       where: {

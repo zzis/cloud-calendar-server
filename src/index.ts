@@ -6,12 +6,15 @@ import fs from 'fs';
 
 import { db } from '@config/database.config';
 import sequelize from '@dao/index';
+import { serviceRegister } from '@services/index';
 
 import router from './routers';
 
 sequelize(db.storage).sync({force: true});
 const app = new Koa();
 const UPLOAD_DIR = '../public/upload/';
+
+app.use(serviceRegister);
 
 app.use(koaBody({
   multipart: true,
