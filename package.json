@@ -6,7 +6,7 @@
   "scripts": {
     "start": "pm2 start",
     "test": "mocha --opts ./mocha.opts",
-    "test-single": "mocha --require ts-node/register ./tests/services/calendar.service.test.ts"
+    "test-single": "mocha --require ts-node/register ./tests/utils/parser.test.ts"
   },
   "repository": {
     "type": "git",

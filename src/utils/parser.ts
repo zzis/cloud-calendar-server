@@ -45,7 +45,7 @@ export function parser(filePath: string) {
         }
         // handle finish
         if (isLast) {
-          resolve({events});
+          resolve({events, error: ''});
         }
       } catch (error) {
         resolve({error: error.message});

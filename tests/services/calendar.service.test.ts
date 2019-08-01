@@ -1,7 +1,8 @@
 import { suite, test } from '@testdeck/mocha';
+import 'module-alias/register';
 import assert from 'assert';
-import CalendarService from '../../src/services/impl/calendar.service.impl';
-import sequelize from '../../src/dao/index';
+import CalendarService from '@services/impl/calendar.service.impl';
+import sequelize from '@dao/index';
 import path from 'path';
 
 @suite

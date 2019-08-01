@@ -1,8 +1,6 @@
 import ICalendarService from '@services/calendar.service';
-import Calendar from '../../dao/models/calendar.model';
-// import Calendar from '@models/calendar.model';
-// import Schedule from '@models/schedule.model';
-import Schedule from '../../dao/models/schedule.model';
+import Calendar from '@models/calendar.model';
+import Schedule from '@models/schedule.model';
 import { IEvent } from '@utils/parser';
 
 const COLORS = [
