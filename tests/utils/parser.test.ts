@@ -16,5 +16,4 @@ class ParserTest {
     const proceedData: any = await parser(path.join(__dirname, './resources/test.txt'));
     assert.ok(proceedData.events);
   }
-
 }

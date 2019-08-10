@@ -4,3 +4,12 @@
 11:00 - 12:00 | 做饭 | 宫保鸡丁，红烧排骨
 11:00 - 12:00 | 做饭 | 宫保鸡丁，红烧排骨
 11:00 - 12:00 | 做饭 | 宫保鸡丁，红烧排骨
+
+2019-08-05 周五
+上午
+10:50 - 11:20 | working | 周报
+11:20 - 12:00 | working | ab dchat替换钉钉 — 测试环境
+14:00 - 16:00 | working | 帮解决把脉打包问题 & 帮看select onChange触发componentWillRectiveProps问题
+16:00 - 16:20 | working | ab dchat更新打开方式，python sdk更新readme
+16:30 - 17:00 | working | 找dchat官方号的用户名 - 未解决 当前不支持
+17:00 - 21:30 | meeting | ab 2019下半年目标制定

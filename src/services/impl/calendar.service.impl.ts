@@ -33,6 +33,19 @@ export default class CalendarService implements ICalendarService {
     this.calendars = {};
   }
 
+  public async getAllCalendars(): Promise<Calendar[]> {
+    const calendars = await Calendar.findAll();
+    await Promise.all(calendars.map(async (calendar) => {
+      const schedules = await Schedule.findAll({
+        where: {
+          calendarId: calendar.id,
+        },
+      });
+      calendar.schedules = schedules;
+    }));
+    return calendars;
+  }
+
   /**
    * create schedules
    * @param data {any} data pasered by utils/parser

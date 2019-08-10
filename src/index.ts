@@ -10,7 +10,7 @@ import { serviceRegister } from '@services/index';
 
 import router from './routers';
 
-sequelize(db.storage).sync({force: true});
+sequelize(db.storage).sync();
 const app = new Koa();
 const UPLOAD_DIR = '../public/upload/';
 

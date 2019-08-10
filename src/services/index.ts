@@ -7,6 +7,9 @@ export async function serviceRegister(ctx, next) {
   await next();
 }
 
+/**
+ * define services types injected in koa context
+ */
 interface IServices {
   calendarService: ICalendarService;
 }

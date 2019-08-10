@@ -3,14 +3,16 @@ import 'module-alias/register';
 import assert from 'assert';
 import CalendarService from '@services/impl/calendar.service.impl';
 import sequelize from '@dao/index';
-import path from 'path';
+import { testDB } from '@config/database.config';
+import { prepareData } from '../utils/prepareData';
 
 @suite
 class CalendarServiceTest {
   private calendarService: CalendarService;
   public async before() {
-    await sequelize(path.join(__dirname, '../../:memory')).sync({force: true});
+    await sequelize(testDB.storage).sync({force: true});
     this.calendarService = new CalendarService();
+    await prepareData();
   }
 
   @test
@@ -38,5 +40,11 @@ class CalendarServiceTest {
     };
     const calendars = await this.calendarService.createEvents(data);
     assert.ok(calendars.length > 0);
+  }
+
+  @test
+  public async getAllCalendarTest() {
+    const calendars = await this.calendarService.getAllCalendars();
+    assert.ok(calendars.length);
   }
 }

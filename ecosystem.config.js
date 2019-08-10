@@ -10,7 +10,7 @@ module.exports = {
     instances: 1,
     autorestart: true,
     watch: true,
-    ignore_watch: ['node_modules', '.git', 'public'],
+    ignore_watch: ['node_modules', '.git', 'public', './:memory', ':memory-journal'],
     output: './log/out.log',
     erorr: './log/error.log',
     // max_restarts: 10,
