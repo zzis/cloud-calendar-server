@@ -71,6 +71,7 @@ export default class CalendarService implements ICalendarService {
         calendars.push(c);
       }
       c.schedules.push({
+        id: schedule.id,
         title: schedule.title,
         start: schedule.start,
         end: schedule.end,
@@ -86,13 +87,34 @@ export default class CalendarService implements ICalendarService {
    * @param calendar {Calendar} calendar
    */
   private async createEvent(event: IEvent, calendar: Calendar) {
-    const schedule = await Schedule.create({
+    const scheduleCon = {
+      where: {
+        title: event.description,
+        start: `${event.date} ${event.start}`,
+        end: `${event.date} ${event.end}`,
+        calendarId: calendar.id,
+      },
+    };
+    let schedule = await this.findScheduleByCondition(scheduleCon);
+    if (schedule) {
+      return schedule;
+    }
+    // if schedule not exist then create
+    schedule = await Schedule.create({
       title: event.description,
       start: `${event.date} ${event.start}`,
       end: `${event.date} ${event.end}`,
       calendarId: calendar.id,
     });
     return schedule;
+  }
+
+  private async findScheduleByCondition(condition: any): Promise<Schedule> {
+    try {
+      return await Schedule.findOne(condition);
+    } catch (err) {
+      return ;
+    }
   }
 
   /**

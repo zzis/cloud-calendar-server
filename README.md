@@ -16,5 +16,8 @@ CloudCalendar server project.
 Run test
 >$ npm test
 
-Run a single test, you should modify the npm script to change the file to test
+Test a single file, you should modify the npm script to change the file to test
 >$ npm run test-single
+
+Test a single case
+>$ mocha tests/**/*test.ts --require ts-node/register --grep createEventTest
