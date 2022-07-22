@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@types/file-type": "^10.9.1",
-    "file-type": "^12.1.0",
+    "file-type": "^16.5.4",
     "koa": "^2.7.0",
     "koa-body": "^4.1.0",
     "koa-router": "^7.4.0",
